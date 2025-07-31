@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+- Nunca altere código sem pedir permissão antes
+- Sempre responda dando a sugestão de solução/alteração/etc... e peça por permissão para alterar
+- sempre divida as alterações em passos
+- Nunca execute nada no terminal sme pedir permissão antes
