@@ -17,8 +17,6 @@ async def process(request: InputMessage, conversation_agent_service: Conversatio
     try:
         response = await conversation_agent_service.process(request)
 
-        
-
         return JSONResponse(content=response)
     except Exception as e:
         logger.error(f"Error processing content: {str(e)}")

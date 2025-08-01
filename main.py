@@ -10,7 +10,10 @@ app.include_router(conversation_agent_router, prefix="/api")
 @app.get("/health")
 async def health():
     """Health check."""
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "title": "conversation-agent"
+        }
 
 
 if __name__ == "__main__":
