@@ -48,7 +48,7 @@ jobs:
               --name ${{ secrets.AZURE_CONTAINER_APP_NAME }} \
               --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
               --image ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
-              --environment ${{ secrets.AZURE_CONTAINER_APP_ENVIRONMENT }}
+              --environment-id ${{ secrets.AZURE_CONTAINER_APP_ENVIRONMENT }}
 
       - name: Deployment Success Notification
         if: success()
