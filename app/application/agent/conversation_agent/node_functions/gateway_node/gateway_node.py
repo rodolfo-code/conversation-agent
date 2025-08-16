@@ -7,13 +7,15 @@ def gateway_node(state: ConversationAgentState) -> Dict[str, Any]:
     """Gateway node that processes the input message."""
 
     llm_service = LLMFactory.create_llm_service("openai")
-    llm_response = llm_service.conversation(state['messages'])
+    next_step = llm_service.decide_next_node(state['current_message'])
 
-    updated_messages = state['messages'] + [AIMessage(content=llm_response)]
+    updated_messages = state['messages'] + [AIMessage(content=next_step)]
 
+    print(f"Next step: {next_step}")
     
     return {
         **state,
         "messages": updated_messages,
-        "response": llm_response,
+        "used_nodes": ["GATEWAY_NODE"],
+        "next_step": next_step,
     } 

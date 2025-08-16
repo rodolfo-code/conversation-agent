@@ -25,7 +25,9 @@ Este projeto implementa Clean Architecture com as seguintes camadas:
 - **Pydantic** - Validação de dados
 - **Uvicorn** - Servidor ASGI
 - **uv** - Gerenciador de pacotes Python ultrarrápido
+
   - **LangSmith** - Monitoramento e debugging de LLM
+
   ## Pré-requisitos
 
 - Python 3.12+
@@ -65,12 +67,25 @@ uv run uvicorn main:app --reload
 ### Variáveis de Ambiente Obrigatórias
 
 - `OPENAI_API_KEY`: Sua chave da API OpenAI
-  - `LANGCHAIN_API_KEY`: Sua chave da API LangSmith (opcional)
-  ### Variáveis de Ambiente Opcionais
 
-- `OPENAI_MODEL`: Modelo OpenAI a ser usado (padrão: gpt-4o-mini)
+### Variáveis de Ambiente Opcionais
+
+- `OPENAI_MODEL_NAME`: Modelo OpenAI a ser usado (padrão: gpt-4o-mini)
+- `OPENAI_TEMPERATURE`: Temperatura do modelo (padrão: 0.2)
 - `LOG_LEVEL`: Nível de log (padrão: INFO)
 - `ENVIRONMENT`: Ambiente de execução (padrão: development)
+
+### Configurações LangChain Tracing V2 (Opcional)
+
+- `LANGCHAIN_TRACING_V2`: Habilita/desabilita LangSmith (padrão: false)
+- `LANGCHAIN_API_KEY`: Sua chave da API LangSmith (necessária se LANGCHAIN_TRACING_V2=true)
+- `LANGCHAIN_ENDPOINT`: Endpoint do LangSmith (padrão: https://api.smith.langchain.com)
+
+**Nota**:
+
+- LangSmith está desabilitado por padrão para evitar erros de autenticação
+- A versão antiga (LANGCHAIN_TRACING) é automaticamente desabilitada
+- Para habilitar, defina `LANGCHAIN_TRACING_V2=true` e adicione sua `LANGCHAIN_API_KEY` válida
 
 ## Uso com Docker
 

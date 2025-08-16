@@ -1,3 +1,10 @@
+# CONFIGURA LANGCHAIN TRACING V2 ANTES DE QUALQUER IMPORTAÇÃO
+import os
+os.environ["LANGCHAIN_TRACING_V2"] = "false"
+
+# Carrega configurações ANTES de qualquer importação do LangChain
+from app.infrastructure.config.config import settings
+
 from fastapi import FastAPI
 from app.presentation.conversation_agent_router import router as conversation_agent_router
 
@@ -12,7 +19,8 @@ async def health():
     """Health check."""
     return {
         "status": "ok",
-        "title": "conversation-agent"
+        "title": "conversation-agent",
+        "langsmith_disabled": not settings.LANGCHAIN_TRACING_V2
         }
 
 

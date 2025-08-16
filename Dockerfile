@@ -1,15 +1,20 @@
 FROM python:3.12-slim
 
+# Instalar uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
 WORKDIR /app
 
-RUN pip install --no-cache-dir uv
-
+# Copiar arquivos de configuração primeiro
 COPY pyproject.toml uv.lock* ./
 
-RUN uv pip install --system --no-cache-dir --requirement pyproject.toml
+# Instalar dependências
+RUN uv sync --no-install-project --frozen || uv sync --no-install-project
 
+# Copiar o resto do código
 COPY . .
 
 EXPOSE 8080
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Usar uv run para executar uvicorn
+CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]

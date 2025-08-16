@@ -36,7 +36,8 @@ class ConversationAgentService:
 
         response = {
             "response": final_state.get("response", "No response generated"),
-            "message": final_state.get("current_message", input_message.message)
+            "message": final_state.get("current_message", input_message.message),
+            "used_nodes": final_state.get("used_nodes", [])
         }
 
         logger.info("Conversation agent response", extra={"response": response})

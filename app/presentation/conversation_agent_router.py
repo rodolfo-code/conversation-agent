@@ -12,10 +12,12 @@ router = APIRouter()
 @router.post("/gateway")
 async def process(request: InputMessage, conversation_agent_service: ConversationAgentService = Depends(ConversationAgentService)):
     """Process content."""
-    logger.info("Processing content", extra={"request": request})
+    logger.info("Processing content:", extra={"request": request})
 
     try:
         response = await conversation_agent_service.process(request)
+
+        print(f"Response: {response}")
 
         return JSONResponse(content=response)
     except Exception as e:
