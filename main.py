@@ -20,7 +20,8 @@ async def health():
     return {
         "status": "ok",
         "title": "conversation-agent",
-        "langsmith_disabled": not settings.LANGCHAIN_TRACING_V2
+        "langsmith_disabled": not settings.LANGCHAIN_TRACING_V2,
+        "version": "1.2.0"
         }
 
 
