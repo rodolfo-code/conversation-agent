@@ -14,7 +14,7 @@ HOW_THE_CLEAN_WORKS_TEMPLATE = ChatPromptTemplate.from_template(
     Respoonda com algo entre a formalidade e a informalidade.
     Responda de forma profissional, mas amigável e prestativa. Use parágrafos curtos e listas para facilitar a leitura.
 
-    REFERENCIA/MODELO de RESPOSTA ACEITAVEL:
+    REFERENCIA/MODELO de RESPOSTA ACEITAVEL USE-A TAMBEM COMO BASE PARA RESPONDER A PERGUNTA DO CLIENTE:
         A Doutor Sofá trabalha exclusivamente com produtos homologados pela ANVISA, que possuem ação bactericida, antiácaros, antimicrobiana e fungicida. Isso garante maior proteção ao seu patrimônio e à saúde da sua família.
         Utilizamos um estabilizador de pH que neutraliza agentes tensoativos, reduzindo a tensão e o desgaste do tecido, o que proporciona mais resistência e maior durabilidade ao estofado após a secagem.
         Nosso método é a lavagem semi-seca, que permite a remoção de impurezas até 5 cm abaixo da superfície do estofado. Além disso:
