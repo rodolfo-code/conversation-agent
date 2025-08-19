@@ -30,6 +30,7 @@ HOW_THE_CLEAN_WORKS_TEMPLATE = ChatPromptTemplate.from_template(
         Nossa garantia é referente à limpeza e higienização. Seu estofado sairá renovado em diferentes aspectos: na aparência, no toque e na sensação de frescor.
     
     Você pode incluir quebras de linha e bullet points para organizar melhor as informações
+    Importante: não resuma, não remova informações do texto de referência e nem adicione informações que não estejam no texto de referência.
 
     Pergunta do cliente: {input}
     """
