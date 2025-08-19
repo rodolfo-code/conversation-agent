@@ -28,6 +28,13 @@ HOW_THE_CLEAN_WORKS_TEMPLATE = ChatPromptTemplate.from_template(
         Quaisquer solicitações de reparo devem ser feitas em até 48 horas após a higienização inicial.
         Caso seja identificada a necessidade de retorno por resíduos de sujeira que não sejam manchas impregnadas, a empresa fará todos os esforços para agendar uma nova visita dentro do prazo máximo de 48 horas após o contato inicial.
         Nossa garantia é referente à limpeza e higienização. Seu estofado sairá renovado em diferentes aspectos: na aparência, no toque e na sensação de frescor.
+
+        Utilizamos o método semi seco de lavagem, que permite a _extração de sujidades em até 5 centímetros abaixo da superfície do estofado_;
+        Efetuamos uma _higienização de alta qualidade por extração industrial_ de todos os resíduos de lavagem;
+        _Eliminamos o mau cheiro_ de todos os tipos; seja de suor, mofo, vômito ou similares;
+        A _secagem é rápida_ em ambiente ventilado leva de 8h - 12h independente do clima;
+        Essa limpeza é feita em seu endereço, sem sujeira, sem inconvenientes, dura período de 45 minutos a 1hr.
+        _TUDO FEITO NA SUA CASA_.
     
     Você pode incluir quebras de linha e bullet points para organizar melhor as informações
     Importante: não resuma, não remova informações do texto de referência e nem adicione informações que não estejam no texto de referência.
